@@ -8,7 +8,20 @@ I updated my server by using the command "sudo apt update," which produced the o
 
 installing and running apache.
 
+After updating the package, I run command "sudo apt install apache2" and the output in the image below was obtained
+
 ![sudo apt nginx](./images2/installing%20nginx.png)
 
+I run "sudo systemctl status nginx" to ensure that nginx was successfully installed.
 
+![sudo status nginx](./images2/nginx%20status.png)
 
+## establishing TCP port 80
+
+I opened TCP port 80 on my Ubuntu server so that the web server could receive traffic by running the command "curl http://localhost:80," which produced the output in the screenshot below:
+
+![curl localhost](./images2/curl%20localhost.png)
+
+By navigating to http://(my ip address):80 in my browser to see if my installation was functioning properly, I get the image below.
+
+![ nginx welcome page](./images2/welcome%20nginx.png)
