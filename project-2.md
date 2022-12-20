@@ -25,3 +25,12 @@ I opened TCP port 80 on my Ubuntu server so that the web server could receive tr
 By navigating to http://(my ip address):80 in my browser to see if my installation was functioning properly, I get the image below.
 
 ![ nginx welcome page](./images2/welcome%20nginx.png)
+
+Mysql was installed using the command "sudo apt install mysql-server," and the result is shown in the image below.
+
+![mysql installation](./images2/sudo%20mysql%20install.png)
+
+After entering mysql native password as the root password, I defined the user password and used the command "exit" to shut down mysql.
+
+![passsword mysql](./images2/mysql%20pswd.png)
+
