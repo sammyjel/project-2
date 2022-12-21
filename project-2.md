@@ -99,3 +99,17 @@ In order to do this, I added the command "sudo echo 'Hello LEMP from hostname' $
 
 ![hello LEMP](./images2/hello%20LEMP.png)
 
+## Testing PHP with Nginx
+
+To validate if Nginx can correctly hand .php to the php processor that I configured. To do this, I opened a new file named info.php by running the command below:
+
+sudo nano /var/www/lempstackproject/info.php and a blank space output was generated in which run command
+
+< ?
+phpinfo();
+
+The output shown below, which was created, served as confirmation that my configuration was right.
+
+![php with Nginx](./images2/info.php%20nginx.png)
+
+
