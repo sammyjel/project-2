@@ -149,5 +149,29 @@ I run the command SELECT * FROM sam_database.todo_list to see if the items I cre
 
 ![todo items ](./images2/dbase%20to%20list%20gen.png)
 
+I close the MySQL console once this has been verified. As a result, I develop a PHP script that must connect to Mysql and perform a content query. To do this, I used the vi editor to run the command sudo nano /var/www/lempstackproject/todo list.php in my custom web root directory to create a new PHP file.
 
+The script below was executed to link the query for the data in the todo_list table I generated to the MySQL database and display the results in a list.
+
+< ?php
+$user = "sam_user";
+$password = "Samfem@1";
+$database = "sam_database";
+$table = "todo_list";
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}
+
+I then used my browser to access the page at http://my_IP/todo_list.php. and the browser produced the output below.
+
+![todo web display](./images2/to%20do%20list%20web.png)
 
