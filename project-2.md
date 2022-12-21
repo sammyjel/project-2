@@ -112,4 +112,42 @@ The output shown below, which was created, served as confirmation that my config
 
 ![php with Nginx](./images2/info.php%20nginx.png)
 
+## *Retrieving data from MySQL database with PHP*
+
+To enable the Nginx website to query the database and show the data, a simple "To do list" was established in a test database and access to it was configured.
+
+Using the root account, I run the command sudo mysql to log into the MySQL console.
+
+I run the command CREATE DATABASE "sam_database" to create a new database, and the output shown below was produced.
+
+![create dbase](./images2/create%20of%20sam%20dbase.png)
+
+The default authentication method was mysql native password, and I established a new user named olaniyi user. I therefore defined ******* as the sam_user password.
+
+After that, I execute the command GRANT ALL ON sam_database to grant the new user access to the database.
+
+* TO 'sam_user'@'%'; the following output was produced as a result
+
+![FRANT ALL ON](./images2/dbase%20pswd%20created.png)
+
+I exit the MySQL console, log into the sam_user console, and run the command -u sam_user -p to see if the new user's access is functioning as intended. The output is shown in the image below.
+![new user access](./images2/mysql%20-u%20test.png)
+
+The command SHOW DATABASES was executed to verify that the new user has access to the database, and the results are displayed in the image below:
+
+![show dbase command](./images2/show%20dbase.png)
+
+I used the following command to build a test table called todo_list after evaluating sam_user's database access.
+
+(item_id INT AUTO_INCREMENT, content VARCHAR(255), PRIMARY KEY(item id)), CREATE TABLE sam_database.todo_list);
+
+I then ran the command INSERT INTO sam_database.todo_list (content) VALUES ("My first important item") to add "My first important item" to the test table;
+
+By executing the same command with different settings, I added other items.
+
+I run the command SELECT * FROM sam_database.todo_list to see if the items I created had been inserted as planned, and the output shown below was produced.
+
+![todo items ](./images2/dbase%20to%20list%20gen.png)
+
+
 
